@@ -43,6 +43,7 @@ jobs:
     # Test the deployment
     - name: Test
       run: |
+        sleep 600
         kubectl describe pod -l app=weather-py 
         kubectl wait --for=condition=Ready pod -l app=weather-py --timeout=600s
         # Add commands to test the application
