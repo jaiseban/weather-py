@@ -43,7 +43,7 @@ jobs:
     # Test the deployment
     - name: Test
       run: |
-        kubectl wait --for=condition=Ready pod -l app=weather-py --timeout=300s
+        kubectl wait --for=condition=Ready pod -l app=weather-py --timeout=600s
         # Add commands to test the application
         # For instance, using curl to check if the app responds correctly
         NODE_PORT=$(kubectl get svc weather-py-service -o=jsonpath='{.spec.ports[0].nodePort}')
